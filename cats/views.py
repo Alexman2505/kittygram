@@ -16,4 +16,7 @@ def cat_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     cats = Cat.objects.all()
     serializer = CatSerializer(cats, many=True)
+    print(f'1  {cats}')
+    print(f'2  {serializer}')
+    print(f'3  {serializer.data}')
     return Response(serializer.data)
